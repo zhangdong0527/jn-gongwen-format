@@ -165,7 +165,9 @@ def ppr_xml(kind: str, indent_chars: int | None = None, align: str | None = None
         f'<w:pStyle w:val="{style_id}"/>',
         '<w:keepNext/>' if kind in ("title", "subtitle") else "",
         '<w:snapToGrid w:val="0"/>',
-        f'<w:spacing w:before="0" w:after="0" w:line="{line}" w:lineRule="exact"/>',
+        f'<w:spacing w:before="0" w:after="0" '
+        f'w:beforeAutospacing="0" w:afterAutospacing="0" '
+        f'w:line="{line}" w:lineRule="exact"/>',
     ]
     if indent_chars:
         # firstLineChars is in 1/100 character units; firstLine is a twip fallback.

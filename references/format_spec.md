@@ -44,6 +44,8 @@
 - [ ] 副标题 `w:eastAsia="楷体_GB2312"`，`w:sz w:val="32"`，`w:jc w:val="center"`
 - [ ] 一级标题 `w:eastAsia="黑体"`，二级 `楷体_GB2312`，三/四级 `仿宋_GB2312`，均为 `w:sz w:val="32"`
 - [ ] 所有段落 `w:spacing w:line="580" w:lineRule="exact"`（580 = 29pt × 20）
+- [ ] 所有段落 `w:before="0" w:after="0" w:beforeAutospacing="0" w:afterAutospacing="0"`，
+      否则 Word 段落对话框会把段前段后显示为“自动”
 - [ ] 正文段落 `w:jc w:val="both"`，`w:ind w:firstLineChars="200" w:firstLine="640"`
 - [ ] 标题块后存在且仅存在一个空段落
 - [ ] 层级编号正确：一、→（一）→ 1．→（1），下级重建后上级继续累加

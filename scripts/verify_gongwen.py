@@ -119,6 +119,11 @@ def verify(path: Path) -> int:
               f"期望 {align_exp}，实际 {align}")
         check(results, line == "580" and rule == "exact", f"第 {idx} 段固定行距({style})",
               f"期望 line=580 exact，实际 line={line} rule={rule}")
+        before_auto = spacing.get(q("beforeAutospacing")) if spacing is not None else None
+        after_auto = spacing.get(q("afterAutospacing")) if spacing is not None else None
+        check(results, before_auto == "0" and after_auto == "0",
+              f"第 {idx} 段段前后非自动({style})",
+              f"beforeAuto={before_auto} afterAuto={after_auto}")
         if style != "GongwenBlank":
             check(results, has_indent == indent_exp, f"第 {idx} 段首行缩进({style})",
                   f"期望 {'2字符' if indent_exp else '无'}，实际 {'2字符' if has_indent else '无'}")
